@@ -16,16 +16,6 @@ recognition.onresult=function(event){
     }
 }
 camera=document.getElementById("camera");
-function speak(){
-    var sint=window.speechSynthesis;
-    speakdata=document.getElementById("textbox").value;
-    var utterThis=new SpeechSynthesisUtterance(speakdata);
-    sint.speak(utterThis);
-    Webcam.attach(camera);
-    setTimeout(function(){
-        takeselfie();
-    save();},5000);
-}
 Webcam.set({
     width:360,
     height:250,
@@ -43,4 +33,15 @@ function save(){
     image=document.getElementById("selfie").src;
     link.href=image;
     link.click();
+}
+
+function speak(){
+    var sint=window.speechSynthesis;
+    speakdata=document.getElementById("textbox").value;
+    var utterThis=new SpeechSynthesisUtterance(speakdata);
+    sint.speak(utterThis);
+    Webcam.attach(camera);
+    setTimeout(function(){
+        takeselfie();
+    save();},5000);
 }
