@@ -19,7 +19,7 @@ camera=document.getElementById("camera");
 function speak(){
     var sint=window.speechSynthesis;
     speakdata=document.getElementById("textbox").value;
-    var utterThis=new SpeechSynthesisUtterance(speak_data);
+    var utterThis=new SpeechSynthesisUtterance(speakdata);
     sint.speak(utterThis);
     Webcam.attach(camera);
     setTimeout(function(){
